@@ -1,8 +1,9 @@
+const test = require("tape");
 const remark = require("remark");
 const inlineSVG = require(".");
 const { readSync } = require("to-vfile");
 
-const file = readSync("./latitude-longitude/lat.md");
+const file = readSync("./test/doc.md");
 // const file = readSync("./lat.md");
 
 remark()
