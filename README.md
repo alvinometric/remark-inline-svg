@@ -58,11 +58,11 @@ Cheers
 
 ## Options
 
-| Key                   | Default value         | Description                                          |
-| --------------------- | --------------------- | ---------------------------------------------------- |
-| [`suffix`](#suffix)   | `".inline.svg"`       | The plugin only the SVG files ending with this value |
-| [`replace`](#replace) | `undefined`           | Lets you replace strings within the SVG file         |
-| [`class`](#class)     | `markdown-inline-svg` | class of the wrapper element                         |
+| Key                       | Default value         | Description                                                |
+| ------------------------- | --------------------- | ---------------------------------------------------------- |
+| [`suffix`](#suffix)       | `".inline.svg"`       | The plugin only processes SVG files ending with this value |
+| [`replace`](#replace)     | `undefined`           | Lets you replace strings within the SVG file               |
+| [`className`](#className) | `markdown-inline-svg` | class of the wrapper element                               |
 
 ### Suffix
 
@@ -72,9 +72,9 @@ This plugin will ignore SVG files if they don't have the specified suffix, set t
 
 Array of strings to replace with other strings
 
-### class
+### className
 
-The inlined SVG is wrapped in a `<figure>` element, and given a class of `markdown-inline-svg` to let you apply some custom styles. You can change that class by modifiying the value of the `class` option.
+The inlined SVG is wrapped in a `<figure>` element, and given a class of `markdown-inline-svg` to let you apply some custom styles. You can change that class by modifiying the value of the `className` option.
 
 ```html
 <!-- You can change this class name 👇 -->

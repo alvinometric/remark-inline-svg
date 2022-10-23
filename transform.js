@@ -40,7 +40,7 @@ const inlineSVG = async (node, options) => {
 
   html = html.replace(svgAttrs, `${svgAttrs} role="img" aria-hidden="true"`);
 
-  const className = options.class || "markdown-inline-svg";
+  const className = options.className || "markdown-inline-svg";
 
   node.type = "html";
   node.value = `<figure class="${className}">
