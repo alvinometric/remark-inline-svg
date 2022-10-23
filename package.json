@@ -1,0 +1,18 @@
+{
+  "name": "remark-inline-svg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "remark": "^13.0.0",
+    "svgo": "^2.8.0",
+    "to-vfile": "^6.1.0",
+    "unist-util-visit": "^2.0.3"
+  }
+}
