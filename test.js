@@ -3,20 +3,28 @@ const remark = require("remark");
 const inlineSVG = require(".");
 const { readSync } = require("to-vfile");
 
-const file = readSync("./test/doc.md");
-// const file = readSync("./lat.md");
+const markdown = readSync("./test/doc.md");
 
-remark()
-  .use(inlineSVG, {
-    suffix: ".inline.svg",
-    replace: {
-      "#5f3dc4": "var(--highlight)",
-      "#5F3DC4": "var(--highlight)",
-      "#000": "currentColor",
-      Helvetica: "Virgil",
-    },
-  })
-  .process(file, function (err, file) {
-    if (err) throw err;
-    console.log(String(file));
-  });
+const noArgument = `
+# Hello
+
+This is a test markdown document.
+
+<figure class="markdown-inline-svg">
+  <svg fill="none" viewBox="0 0 250 250" role="img" aria-hidden="true"><circle cx="125" cy="125" r="100" fill="#BA5B5B"/></svg>
+</figure>
+
+Cheers
+`;
+
+test("no argument", async (t) => {
+  t.doesNotThrow(() => {
+    remark().use(inlineSVG).freeze();
+  }, "should not throw if not passed options");
+
+  const file = await remark().use(inlineSVG).process(markdown);
+
+  t.equal(String(file).trim(), noArgument.trim());
+
+  t.end();
+});
