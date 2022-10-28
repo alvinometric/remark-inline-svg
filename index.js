@@ -19,11 +19,13 @@ module.exports = (options = {}) => {
       }
     });
 
-    const promises = svgs.map(async (node) => {
-      return await transform(node, options);
-    });
+    if (svgs.length > 0) {
+      const promises = svgs.map(async (node) => {
+        return await transform(node, options);
+      });
 
-    await Promise.all(promises);
+      await Promise.all(promises);
+    }
 
     return tree;
   };
