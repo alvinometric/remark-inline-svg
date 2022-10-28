@@ -1,9 +1,9 @@
-const fs = require("fs/promises");
-const { optimize } = require("svgo");
+const fs = require('fs/promises');
+const { optimize } = require('svgo');
 
 const svgoPlugins = [
   {
-    name: "preset-default",
+    name: 'preset-default',
     params: {
       overrides: {
         // disable plugins
@@ -12,22 +12,24 @@ const svgoPlugins = [
       },
     },
   },
-  "removeXMLNS",
-  "removeDimensions",
-  "sortAttrs",
+  'removeXMLNS',
+  'removeDimensions',
+  'sortAttrs',
 ];
 
 const inlineSVG = async (node, options) => {
   const { alt, url } = node;
 
-  const image = await fs.readFile(url, "utf-8");
+  console.log(options);
+
+  const image = await fs.readFile(url, 'utf-8');
   const result = await optimize(image, { plugins: svgoPlugins });
 
   let { data: html } = result;
 
   if (options.replace) {
     Object.entries(options.replace).forEach(([str, replacement]) => {
-      const re = new RegExp(str, "g");
+      const re = new RegExp(str, 'g');
 
       if (!!html === false) {
         console.log(`[remark-inline-svg]: problem optimizing ${url}`);
@@ -40,9 +42,9 @@ const inlineSVG = async (node, options) => {
 
   html = html.replace(svgAttrs, `${svgAttrs} role="img" aria-hidden="true"`);
 
-  const className = options.className || "markdown-inline-svg";
+  const className = options.className || 'markdown-inline-svg';
 
-  node.type = "html";
+  node.type = 'html';
   node.value = `<figure class="${className}">
   ${html.trim()}
 </figure>`;
