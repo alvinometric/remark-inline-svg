@@ -2,6 +2,14 @@
 
 Plugin that inlines SVG images from markdown and optimises them with [SVGO](https://github.com/svg/svgo).
 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Options](#options)
+  - [Suffix](#suffix)
+  - [Replace](#replace)
+  - [className](#classname)
+- [SVGO configuration](#svgo-configuration)
+
 ## Installation
 
 Install with [npm](https://www.npmjs.com/):
@@ -83,6 +91,28 @@ The inlined SVG is wrapped in a `<figure>` element, and given a class of `markdo
     <circle cx="125" cy="125" r="100" fill="#BA5B5B" />
   </svg>
 </figure>
+```
+
+## SVGO configuration
+
+The SVGO configuration is as follows:
+
+```js
+const svgoPlugins = [
+  {
+    name: "preset-default",
+    params: {
+      overrides: {
+        // disable plugins
+        removeTitle: false,
+        removeDesc: false,
+      },
+    },
+  },
+  "removeXMLNS",
+  "removeDimensions",
+  "sortAttrs",
+];
 ```
 
 TODO:
