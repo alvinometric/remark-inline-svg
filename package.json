@@ -1,13 +1,25 @@
 {
   "name": "remark-inline-svg",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Remark plugin that inlines SVG images from markdown and optimises them with SVGO",
   "main": "index.js",
   "scripts": {
     "test": "uvu"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "remark",
+    "svg",
+    "svgo"
+  ],
+  "files": [
+    "index.js",
+    "transform.js"
+  ],
+  "author": {
+    "name": "Alvin Bryan",
+    "email": "hello@alvin.codes",
+    "url": "https://alvin.codes"
+  },
   "license": "ISC",
   "dependencies": {
     "remark": "^13.0.0",
