@@ -126,8 +126,6 @@ const svgoPlugins = [
 
 TODO:
 
-- [ ] Add test case for `replace` option
-- [ ] Add test case for `class` option
 - [ ] Support titles
 
 [downloads-badge]: https://img.shields.io/npm/dm/remark-inline-svg.svg?style=flat-square
