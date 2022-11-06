@@ -20,7 +20,7 @@
     "email": "hello@alvin.codes",
     "url": "https://alvin.codes"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "remark": "^13.0.0",
     "svgo": "^2.8.0",
