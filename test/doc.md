@@ -2,6 +2,6 @@
 
 This is a test markdown document.
 
-![Inline SVG](circle.inline.svg)
+![Inline SVG](./nested-folder/circle.inline.svg)
 
 Cheers

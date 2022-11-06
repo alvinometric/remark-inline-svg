@@ -20,8 +20,6 @@ const svgoPlugins = [
 const inlineSVG = async (node, options) => {
   const { alt, url } = node;
 
-  console.log(options);
-
   const image = await fs.readFile(url, 'utf-8');
   const result = await optimize(image, { plugins: svgoPlugins });
 
@@ -46,7 +44,7 @@ const inlineSVG = async (node, options) => {
 
   node.type = 'html';
   node.value = `<figure class="${className}">
-  ${html.trim()}
+  ${html}
 </figure>`;
 };
 
