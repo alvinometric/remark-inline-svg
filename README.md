@@ -1,14 +1,23 @@
 # remark-inline-svg
 
+<!-- prettier-ignore-start -->
+<!-- Definitions at the end of the document -->
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
+[![version](https://img.shields.io/npm/v/remark-inline-svg.svg?style=flat-square)](https://www.npmjs.com/package/remark-inline-svg)
+[![MIT License](https://img.shields.io/npm/l/remark-inline-svg.svg?style=flat-square)](https://github.com/alvinometric/remark-inline-svg/blob/main/LICENSE)
+<!-- prettier-ignore-end -->
+
 Plugin that inlines SVG images from markdown and optimises them with [SVGO](https://github.com/svg/svgo).
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Options](#options)
-  - [Suffix](#suffix)
-  - [Replace](#replace)
-  - [className](#classname)
-- [SVGO configuration](#svgo-configuration)
+- [remark-inline-svg](#remark-inline-svg)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Options](#options)
+    - [`suffix`](#suffix)
+    - [`replace`](#replace)
+    - [`className`](#classname)
+  - [SVGO configuration](#svgo-configuration)
 
 ## Installation
 
@@ -35,12 +44,12 @@ Cheers
 And our module `example.js` looks as follows:
 
 ```js
-const test = require("tape");
-const remark = require("remark");
-const inlineSVG = require("remark-inline-svg");
-const { readSync } = require("to-vfile");
+const test = require('tape');
+const remark = require('remark');
+const inlineSVG = require('remark-inline-svg');
+const { readSync } = require('to-vfile');
 
-const file = readSync("./example.md");
+const file = readSync('./example.md');
 
 remark()
   .use(inlineSVG)
@@ -72,15 +81,15 @@ Cheers
 | [`replace`](#replace)     | `undefined`           | Lets you replace strings within the SVG file               |
 | [`className`](#className) | `markdown-inline-svg` | class of the wrapper element                               |
 
-### Suffix
+### `suffix`
 
 This plugin will ignore SVG files if they don't have the specified suffix, set to `.inline.svg` by default. This is to minimise disruption to your workflow.
 
-### Replace
+### `replace`
 
 Array of strings to replace with other strings
 
-### className
+### `className`
 
 The inlined SVG is wrapped in a `<figure>` element, and given a class of `markdown-inline-svg` to let you apply some custom styles. You can change that class by modifiying the value of the `className` option.
 
@@ -100,7 +109,7 @@ The SVGO configuration is as follows:
 ```js
 const svgoPlugins = [
   {
-    name: "preset-default",
+    name: 'preset-default',
     params: {
       overrides: {
         // disable plugins
@@ -109,9 +118,9 @@ const svgoPlugins = [
       },
     },
   },
-  "removeXMLNS",
-  "removeDimensions",
-  "sortAttrs",
+  'removeXMLNS',
+  'removeDimensions',
+  'sortAttrs',
 ];
 ```
 
@@ -120,3 +129,8 @@ TODO:
 - [ ] Add test case for `replace` option
 - [ ] Add test case for `class` option
 - [ ] Support titles
+
+[downloads-badge]: https://img.shields.io/npm/dm/remark-inline-svg.svg?style=flat-square
+[downloads]: https://www.npmjs.com/package/remark-inline-svg
+[size-badge]: https://img.shields.io/bundlephobia/minzip/remark-inline-svg.svg?style=flat-square
+[size]: https://bundlephobia.com/result?p=remark-inline-svg
