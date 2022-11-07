@@ -15,6 +15,14 @@
     "index.js",
     "transform.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alvinometric/remark-inline-svg.git"
+  },
+  "homepage": "https://github.com/alvinometric/remark-inline-svg",
+  "bugs": {
+    "url": "https://github.com/alvinometric/remark-inline-svg/issues"
+  },
   "author": {
     "name": "Alvin Bryan",
     "email": "hello@alvin.codes",
