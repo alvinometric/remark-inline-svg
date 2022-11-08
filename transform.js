@@ -14,7 +14,6 @@ const svgoPlugins = [
   },
   'removeXMLNS',
   'removeDimensions',
-  'sortAttrs',
 ];
 
 const inlineSVG = async (node, options) => {

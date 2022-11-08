@@ -30,7 +30,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "svgo": "^2.8.0",
+    "svgo": "^3.0.0",
     "to-vfile": "^6.1.0",
     "unist-util-visit": "^2.0.3"
   },
