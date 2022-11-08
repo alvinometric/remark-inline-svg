@@ -1,6 +1,6 @@
 {
   "name": "remark-inline-svg",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Remark plugin that inlines SVG images from markdown and optimises them with SVGO",
   "main": "index.js",
   "scripts": {
