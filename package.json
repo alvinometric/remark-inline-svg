@@ -31,11 +31,11 @@
   "license": "MIT",
   "dependencies": {
     "svgo": "^3.0.0",
-    "to-vfile": "^6.1.0",
     "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
     "remark": "^13.0.0",
+    "to-vfile": "^6.1.0",
     "uvu": "^0.5.6"
   }
 }
