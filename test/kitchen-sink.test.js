@@ -1,8 +1,8 @@
-const { test } = require('uvu');
-const assert = require('uvu/assert');
-const remark = require('remark');
-const inlineSVG = require('../');
-const { readSync } = require('to-vfile');
+import { test } from 'uvu';
+import { is } from 'uvu/assert';
+import { remark } from 'remark';
+import inlineSVG from '../index.js';
+import { readSync } from 'to-vfile';
 
 const markdown = readSync('./test/doc.md');
 
@@ -28,7 +28,7 @@ test('Kitchen Sink', async () => {
     })
     .process(markdown);
 
-  assert.is(file.toString(), kitchenSink);
+  is(file.toString(), kitchenSink);
 });
 
 test.run();

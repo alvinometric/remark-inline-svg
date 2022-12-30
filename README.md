@@ -8,10 +8,11 @@
 [![MIT License](https://img.shields.io/npm/l/remark-inline-svg.svg?style=flat-square)](https://github.com/alvinometric/remark-inline-svg/blob/main/LICENSE)
 <!-- prettier-ignore-end -->
 
-Plugin that inlines SVG images from markdown and optimises them with [SVGO](https://github.com/svg/svgo).
+Plugin that takes SVG images in markdown, optimises them with [SVGO](https://github.com/svg/svgo) and  adds them inline to the HTML output.
 
 - [remark-inline-svg](#remark-inline-svg)
   - [Installation](#installation)
+  - [Install](#install)
   - [Usage](#usage)
   - [Options](#options)
     - [`suffix`](#suffix)
@@ -21,10 +22,27 @@ Plugin that inlines SVG images from markdown and optimises them with [SVGO](http
 
 ## Installation
 
-Install with [npm](https://www.npmjs.com/):
+## Install
+
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
+In Node.js (version 12.20+, 14.14+, 16.0+, or 18.0+), install with [npm](https://npmjs.com):
 
 ```sh
 npm install remark-inline-svg
+```
+
+In Deno with [`esm.sh`](https://esm.sh/):
+
+```js
+import inlineSVG from 'https://esm.sh/remark-inline-svg@1'
+```
+
+In browsers with [`esm.sh`](https://esm.sh/):
+
+```html
+<script type="module">
+  import inlineSVG from 'https://esm.sh/remark-inline-svg@1?bundle'
+</script>
 ```
 
 ## Usage
@@ -44,10 +62,10 @@ Cheers
 And our module `example.js` looks as follows:
 
 ```js
-const test = require('tape');
-const remark = require('remark');
-const inlineSVG = require('remark-inline-svg');
-const { readSync } = require('to-vfile');
+import test from 'tape';
+import {remark} from 'remark';
+import inlineSVG from 'remark-inline-svg';
+import { readSync } from 'to-vfile';
 
 const file = readSync('./example.md');
 

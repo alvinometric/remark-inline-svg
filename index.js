@@ -1,20 +1,20 @@
-const path = require('path');
-const visit = require('unist-util-visit');
-const transform = require('./transform');
+import { dirname, resolve } from 'node:path';
+import { visit } from 'unist-util-visit';
+import transform from './transform.js';
 
-module.exports = (options = {}) => {
+export default (options = {}) => {
   const suffix = options.suffix || '.inline.svg';
 
   return async (tree, file) => {
     const svgs = [];
 
-    const markdownFileDir = path.dirname(file.history[0]);
+    const markdownFileDir = dirname(file.history[0]);
 
     visit(tree, 'image', (node) => {
       const { url } = node;
 
       if (url.endsWith(suffix)) {
-        node.url = path.resolve('./', markdownFileDir, url);
+        node.url = resolve('./', markdownFileDir, url);
         svgs.push(node);
       }
     });
@@ -30,3 +30,5 @@ module.exports = (options = {}) => {
     return tree;
   };
 };
+
+export { transform }

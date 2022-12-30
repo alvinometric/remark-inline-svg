@@ -1,5 +1,5 @@
-const fs = require('fs/promises');
-const { optimize } = require('svgo');
+import fs from 'node:fs/promises';
+import { optimize } from 'svgo';
 
 const svgoPlugins = [
   {
@@ -47,4 +47,4 @@ const inlineSVG = async (node, options) => {
 </figure>`;
 };
 
-module.exports = inlineSVG;
+export default inlineSVG;

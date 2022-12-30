@@ -1,8 +1,8 @@
-const { test } = require('uvu');
-const assert = require('uvu/assert');
-const remark = require('remark');
-const inlineSVG = require('../');
-const { readSync } = require('to-vfile');
+import { test } from 'uvu';
+import { is } from 'uvu/assert';
+import { remark } from 'remark';
+import inlineSVG from '../index.js';
+import { readSync } from 'to-vfile';
 
 const markdown = readSync('./test/doc.md');
 
@@ -20,13 +20,13 @@ Cheers
 test('no argument', async () => {
   const file = await remark().use(inlineSVG).process(markdown);
 
-  assert.is(file.toString(), noArgument);
+  is(file.toString(), noArgument);
 });
 
 test('no argument, nested file', async () => {
   const file = await remark().use(inlineSVG).process(markdown);
 
-  assert.is(file.toString(), noArgument);
+  is(file.toString(), noArgument);
 });
 
 test.run();
