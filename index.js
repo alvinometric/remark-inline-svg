@@ -1,4 +1,4 @@
-import { dirname, resolve } from 'node:path';
+import path from 'node:path';
 import { visit } from 'unist-util-visit';
 import transform from './transform.js';
 
@@ -8,13 +8,16 @@ export default (options = {}) => {
   return async (tree, file) => {
     const svgs = [];
 
-    const markdownFileDir = dirname(file.history[0]);
+    const markdownFileDir = path.dirname(file.history[0]);
 
     visit(tree, 'image', (node) => {
       const { url } = node;
 
       if (url.endsWith(suffix)) {
-        node.url = resolve('./', markdownFileDir, url);
+        // this makes it work when SVGs are prefixed with a /, like /img/circle.svg
+        const fullPath = url.replace(/^\/+/, process.cwd() + '/');
+
+        node.url = path.resolve('./', markdownFileDir, fullPath);
         svgs.push(node);
       }
     });
@@ -31,4 +34,4 @@ export default (options = {}) => {
   };
 };
 
-export { transform }
+export { transform };
