@@ -104,7 +104,17 @@ This plugin will ignore SVG files if they don't have the specified suffix, set t
 
 ### `replace`
 
-Array of strings to replace with other strings
+Array of strings to replace with other strings, for example:
+
+```js
+{
+  replace: {
+    "#41DE50": "currentColor"
+  }
+}
+```
+
+Then `#41DE50` will be replaced with `currentColor` in the SVG output.
 
 ### `className`
 
