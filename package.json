@@ -32,11 +32,11 @@
   "license": "MIT",
   "dependencies": {
     "svgo": "^3.0.2",
-    "unist-util-visit": "^4.1.1"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "remark": "^14.0.2",
-    "to-vfile": "^7.2.3",
+    "remark": "^15.0.1",
+    "to-vfile": "^8.0.0",
     "uvu": "^0.5.6"
   }
 }
